@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manuel's Notes</title>
+	<link rel="stylesheet" type="text/css" href="notes.css">
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<h1>Manuel's Notes</h1>
+	<div class="content">
+		<div class="index_content"><a href="#S1">My Notes for Stage 0: The Basics of the Web and HTML</a></div>
+		<div class="index_content"><a href="#S2">My Notes for Stage 1: Creating a Structured Document with HTML</a><br>
+		<a href="#S2S1">The CSS Selectors</a><br>
+		<a href="#S2S2">Include CSS to your Page</a><br>
+		<a href="#S2S3">The Box Model</a><br>
+		<a href="#S2S4">Code, Test, Refine</a><br></div>
+		<div class="index_content"><a href="#S3">My Notes for Stage 2: Automate your Page</a><br>
+		<a href="#S3S1">Variables and Strings</a><br>
+		<a href="#S3S2">Input -> Function -> Output</a><br>
+		<a href="#S3S3">If and While</a><br>
+		<a href="#S3S4">Lists and For Loops</a><br>
+		<a href="#S3S5">Other Notes for these Session</a></div>
+	</div>
+	<h2 id="S1">My Notes for Stage 0: The Basics of the Web and HTML</h2>
+	<div class="section">
+		<p>All the Client, Server, Internet Stuff is not new for me because i'm a network guy :-).</p>
+		<p><b>&lt;p&gt;Content&lt;/p&gt;</b> is an <b>HTML Tag</b><br>
+    	<b>&lt;p attribute="value"&gt;Content&lt;/p&gt;</b> is an HTML Tag with an <b>Attribute</b><br>
+    	Some Tags don't need to be closed. These are Void Tags. Example &lt;img&gt;</p>
+    	<p>There are <b>Inline</b> and <b>Block</b> elements.<br>
+    	Inline Elements are just manipulate the written Text.<br>
+    	Block Elements are build an invisible Box thourgh the Element</p>
+    	<p><b>&lt;span&gt;</b> is an <b>inline</b> Element and <b>&lt;div&gt;</b> is a <b>block</b> element.</p>
+ 		<p>Computers are stupid. Write exactly what the Computer understands. Otherwise the Code will not work<br>
+  		<b>Don't forget to close your Tag &lt;/tag&gt;</b></p>
+	</div>
+	<h2 id="S2">My Notes for Stage 2: Creating a Structured Document with HTML</h2>
+	<div class="section">
+		<p>HTML and CSS are both "languages"</p>
+		<p><b>HTML</b> controls the <b>"structure"</b> of a web page.</p>
+		<p><b>CSS</b> controls the <b>"style"</b> of a page (how it looks).</p>
+		<p>When programmers talk about the <b>DOM</b> they are talking about the tree-like structure of a page.<br>
+			Structure means, that every HTML Document looks same from ground up. You have the &lt;html&gt; element on top of the page. Then you have the &lt;head&gt; and &lt;body&gt; element as child elements of &lt;html&gt; and so on.<br>So you have a top element and the structure goes down to one or many child elements. But all begins from the Root element.
+		</p>
+		<p>All HTML Elemets are Rectangle Boxes</p>
+		<p>Always use and Texteditor for special puroposes to make your content. For example use one with Syntax Highlighting.</p>
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS Reference Guide</a>
+	</div>
+	<div class="section">
+		<h3 id="S2S1">The CSS Selectors</h3>
+		<p>You could select by <b>element</b> in CSS Selector. Then you have to use this code for Example.</p>
+			<pre>
+h1 {
+background-color : black;
+color: white;
+}
+			</pre>
+		<p>All h1 Elements would now have the Style as configured</p>
+		<p>You could also Select by <b>class</b>. Then the Style would applied to all Elements with the attribute of the Class. Class selector starts with a ..</p>
+			<pre>
+.headline {
+background-color : black;
+color: white;
+}
+			</pre>
+		<p>Now all Elements with the attribute class="headline" would the Style applied.</p>
+	</div>
+	<div>
+		<h3 id="S2S2">Include CSS to your Page</h3>
+		<h4>Method 1: write CSS in the &lt;head&gt; of your HTML</h4>
+		<pre>
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      background-color : red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+		</pre>
+		<h4>Method 2: Link your HTML to a separate CSS file</h4>
+		<p>There you have to specifiy a seperate CSS File in your HTML File header.<br>If the CSS File is not in the same folder you have to specify the Path to the File.</p>
+		<pre>
+&lt;head&gt;
+   &lt;link rel="stylesheet" type="text/css" href="main.css"&gt;
+&lt;/head&gt;
+		</pre>
+		<h4>Method 3: Write your style inline with your HTML</h4>
+		<p>You should not do this because you have to do this for every Element again. Your code base will grow very strong. This means repetition of Code.</p>
+		<pre>
+&lt;div style="background-color: red; color: white"&gt;
+		</pre>
+	</div>
+    <div class="section">
+	    <h3 id="S2S3">The Box Model</h3>
+	    <p>You have in the Box Model four different Types of Borders. The types are <b>Content, Padding, Border and Margin</b>. All Boxes has <b>seperate properties</b>. You can calcualte the Box Size in pixels (px) or in percents.</p>
+	    <p>If you want to calcualte the Width of the Boxes Padding and Border together, you have to use these CSS Options.</p>
+		<pre>
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;
+		</pre>
+		<p>As div elements are Block elements, by default they use the entire width of a page. With the CSS Attribute <b>flex</b> you can Change the Box ordering on the Page. In this <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Guide</a> is the Flexbox Attribute explained.</p>
+    </div>
+    <div class="section">
+	    <h3 id="S2S4">Code, Test, Refine</h3>
+		    <p>1. Look for natural boxes<br>
+		    2. Look for repeated styles & semantic elements<br>
+		    3. Write your HTML<br>
+		    4. Apply Styles (from BIGGEST to smallest)<br>
+		    5. Fix things</p>
+	    <a href="http://validator.w3.org/#validate_by_input">To verfiy HTML Code</a><br>
+	    <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">To verify CSS Code</a>
+    </div>
+    <h2 id="S3">My Note for Stage 2: Automate your Page</h2>
+    <div class="section">
+	    <p><a href="attachments/unit1-notes.pdf" target="_blank">Stage 2: Udacity cs101: Building a Search Engine</a></p>
+	    <p><b>Five Points thinking like a Programmer:</b><br>1. Procedural Thinking<br>2. Abstract Thinking<br>3. Systems Thinking<br>4. Technological Empathy<br>5. Debugging</p>
+	    <p><b>The Backus-Naur Form</b></p>
+	    <p><img src="images/S2S1BackusNaurFrom.png" alt="Backus-Naur Form"></p>
+	    <p>The Backus-Naur From gives a Grammar help for Computer Languages. In the Screenshot you see all Violet Words are Non-Terminal. These Non-Terminals are not finished and you have to go further.</p>
+	    <a href="http://de.wikipedia.org/wiki/Backus-Naur-Form">Wikipedia Link</a>
+	    <p><b>Computer</b><br>A Computer is a device that executes a program. He can execute it really fast and without breaks.</p>
+	    <p><b>Program</b><br>A program describes a very precise sequence of steps. Since the computer is just a machine, the program must give the steps in a way that can be executed mechanically. That is, the program can be followed without any thought.</p>
+	    <p><b>Programming Languages, Interpreter, Python</b><br>There are many Programming Languages out there. Python is an interpreted Language. That means the we write the Code in Python syntax and this Code would be interpreted by an Python Interpreter in Computer Code. The Python interpreter reads our programs and executes them by following the rules of the Python language.<br>
+Not interpreted Languages must be compiled in Computer Code before they can be executed on the Computer</p>
+		<p><b>Grammar</b><br>We need an exact Grammar for Computer Languages because the syntax must be exact for the Computer otherwise the code would not be understood.<br>In natural Languages make sentences that are not complete grammatical but people understand it.</p>
+		<p><b>Python Expressions</b></p>
+		<p><img src="images/S2S1PythonExpressions.png" alt="Python Expression"></p>
+		<p>If you want an Integer expression you only have to use Integer Numbers. If you want your Expression in decimal you need to put a decimal pointer after the Number (for Example 5.9 or 6.7).</p>
+    </div>
+    <div>
+	    <h3 id="S3S1">Vaiables and Strings</h3>
+	    <h4>What is a variable?</h4>
+	    <h4>What does it mean to assigna value to a variable?</h4>
+	    <h4>What is the difference between what the equals = means in math versus programming. What's the differeence between this: 2 + 2 = 5 and this: my_variable = 5?</h4>
+	    <p>A variable is a name refers to a value. In Python, we can use any sequence of letters and numbers and underscores (_) we want to make a variable name, so long as it does not start with a number.</p>
+	    <p>Assign Variables in Python:</p>
+		    <blockquote>Name = Expression<br>
+		    speed_of_light = 299792458</blockquote>
+	    <p>In Math equal Sign means equal, in programming it means assignment. You could see the equal sign as an arrow in Programming.</p>
+	    <p><img src="images/S2S2VariablesEqualMeans.png" alt="What Eqal means in Programming"></p>
+	    <h4>How to declare Strings in Python</h4>
+	    <p><img src="images/S2S2Strings.png" alt="Strings"></p>
+		<p>Strings has always to be closed with the same Quotiation Marks (single and double) as started. You can use the other type of marks in the String.<br>It is importent that the Python interpreter interprets a String only if there are quotation marks. If they not there then the interpretor means there is a number now.</p>
+		<p>To put two Strings together in Python you have to use the concatenation with + Sign. It is different meaning as it is used on numbers.</p>
+		<p><img src="images/S2S2StringsConcatenation.png" alt="String Concatenation in Python"></p>
+		<h4>String Indexing in Python</h4>
+		<p>When you want to select sub-sequences from a string, it is called indexing. Use the square brackets
+[] to specify which part of the string you want to select.</p>
+		<p><img src="images/S2S2StingsIndexing.png" alt="String Indexing in Python"></p>
+		<h4>String Sub Sequences in Python</h4>
+		<p>You can select a sub-sequence of a string by designating a starting position and an end position. Python reads the characters positions starting at 0, so that if we consider the string 'udacity' that has 7 characters, there are 6 positions with 'u' being in the 0 position.</p>
+		<p><img	src="images/S2S2StringsSubSequences.png" alt="String Sub Sequences in Python"></p>
+		<h4>Find Strings</h4>
+		<p>The find method is a built in operation, or method, provided by Python, that operates on strings.
+The output of find is the position of the string where the specified sub-string is found.</p>
+		<p><img src="images/S2S2StringsFind.png" alt="Find Strings"></p>
+		<p>Here some Examples using find method in Python:</p>
+		<blockquote class="code"> 
+			pythagoras = 'There is geometry in the humming of the strings, there is music in the spacing of the spheres. '<br>
+			print pythagoras.find('string')<br>
+			40<br>
+			print pythagoras[40:]<br>
+			strings, there is music in the spacing of the spheres.<br>
+			print pythagoras.find('T')<br>
+			0<br>
+			print pythagoras.find('sphere')<br>
+			86<br>
+			print pythagoras[86:]<br>
+			spheres<br>
+			print pythagoras.find('algebra')<br>
+			-1<br>
+		</blockquote>
+    </div>
+    <div>
+	    <h3 id="S3S2">Input -> Function -> Output</h3>
+	    <p>How to Use Functions (Procedures) in Python.</p>
+	    <p><img src="images/S2S3UsingFunctions.png" alt="Using Functions (Procedures) in Python"></p>
+	    <p>You get a String (s) as Input to the Function. The Interpreter evaluates the String and returns it with the result.</p>
+	    <p>You make Functions with def &lt;function name&gt;.<br> Functions are made by starting a line of code with the keyword def and then giving a function name followed by the function parameters in parentheses. These parameters will eventually be replaced by actual values when the function is used (called).<br>In the "body" of the function, we write the code that specifies what to do with the input parameters. For example the following code could be the definition of a function called square:</p>
+	    <blockquote class="code">
+		    def square(x): <br>
+			answer = x * x <br>
+			return answer<br>
+	    </blockquote>
+	    <p>To use a function, we write the name of the function followed by the value(s) we want to give it in parentheses. Like this:</p>
+	    <blockquote class="code">
+			print square(4) <br>
+			>>>16
+	    </blockquote>
+	    <p>If a function has <b>no return statement</b> Python returns the Keyword <b>None</b>.</p>
+	    <p>Use triple quotes <b>"""Some multiline Text"""</b> to create mulit-line strings in Python.</p>
+	    <p>First automated Python Page Tags:</p>
+	    <blockquote class="code">
+		    def title(title_string):<br>
+			return '&lt;h4&gt;' + title_string + '&lt;/h4&gt;'<br><br>
+			def description(description_string):<br>
+			return '&lt;p&gt;' + description_string + '&lt;/p&gt;'<br><br>
+			print title('My first Python Title')<br>
+			print description('My first Python Auto generated Webpage')<br>
+	    </blockquote>
+	    <h4>My first Python Title</h4>
+		<p>My first Python Auto generated Webpage</p>
+    </div>
+    <div>
+	    <h3 id="S3S3">If and While</h3>
+	    <p>In Equality Comparsion you have many Operators to use. Here some examples:</p>
+		    <table>
+			    <tr>
+			    	<td class="table_tab">&lt;</td>
+			    	<td>value is lower than</td>
+			    </tr>
+			    <tr>
+					<td class="table_tab">&gt;</td>
+					<td>value is greater than</td>
+				</tr>
+				<tr>
+					<td class="table_tab">!=</td>
+					<td>value is not the same than</td>
+				</tr>
+				<tr>
+					<td class="table_tab">==</td>
+					<td>value is the same than</td>
+				</tr>
+		    </table>
+		<p>You have to use double = for this Operation because one = defines a Variable.</p>
+		<p><b>If Loops</b></p>
+		<p><img src="images/S3S3DefineIFStatement.png" alt="Defin a IF Statement in Python"></p>
+		<p>OR Operator in Python</p>
+		<p><img src="images/S3S3Or.png" alt="OR in Python"></p>
+		<p>OR Operator only evaluates what he needs to. After first true in OR Operation he stops to evaluate to further expressions.</p>
+		<p>Flow Chart about Quiz biggest</p>
+		<p><img	src="images/S3S3QuizFlowChart.png" alt="Quiz Flow Chart"></p>
+		<p><b>While Loops</b></p>
+		<p><img src="images/S3S3WhileLoops.png" alt="While Loops in Python"></p>
+		<p>While Loops always executes the Block while the Test Expression is true. If the Test Expression is false, the while Loop ends. While Loops can keep going forever.</p>
+		<p>You can also Stop while Loops with the break statement.</p>
+		<p><img src="images/S3S3BreakWhileLoops.png" alt="Break While Loops in Python"></p>
+		<p style="margin-top: 25px; margin-bottom: 25px"><b>You can write every Computerprogram with:<br>
+			Arithmentic<br>
+			Comparsions<br>
+			Procedures<br>
+			if Statements</b></p>
+    </div>
+	<div>
+		<h3 id="S3S4">Lists and For Loops</h3>
+		<p><a href="attachments/UdacityCS101Unit3StructuredData.pdf">Udacity CS101: Building a Search Engine Unit 3: Data</a></p>
+		<p><img src="images/S3S4Lists.png" alt="Lists in Python"></p>
+		<p>The difference between Lists and Strings is that you can store in a <b>List a sequence of anything</b>. In a String you can only store characters. A List is <b>comma separated in Square Brackets</b>. This looks very similar to Strings but it has another behavior.</p>
+		<p>Here some Codeexamples for Lists in Python:</p>
+		<blockquote class="code">
+			print "EXAMPLE 1: Lists can contain strings"<br>
+			string_list = ['HTML', 'CSS', 'Python']<br>
+			print string_list<br><br>
+
+			print "EXAMPLE 2: Lists can contain numbers"<br>
+			number_list = [3.14159, 2.71828, 1.61803]<br>
+			print number_list<br><br>
+
+			print "EXAMPLE 3: Lists can be 'accessed' and 'sliced' like how we accessed and sliced strings in the previous lessons"<br>
+			pi = number_list[0]<br>
+			not_pi = number_list[1:]<br>
+			print pi	<br>
+			print not_pi<br><br>
+
+			print "EXAMPLE 4: Lists can contain strings AND numbers"<br>
+			mixed_list = ['Hello!', 42, "Goodbye!"]<br>
+			print mixed_list<br>
+
+			print "Example 5: Lists can even contain other lists"<br>
+			list_with_lists = [3, 'colors:', ['red', 'green', 'blue'], 'your favorite?']<br>
+			print list_with_lists<br>
+		</blockquote>
+		<p>You can also have <b>Nested Lists</b>. That means that you have a List in a List. Here is an Example of Nested Lists:</p>
+		<blockquote class="code">
+			beatles = [['John', 1940], ['Paul', 1942],<br>
+					  ['George', 1943], ['Ringo', 1940]]<br>
+		</blockquote>
+		<p>You can select a List with print beatles[1]. Then you got an output of ['Paul', 1942]. But you can also select an Element in a Nested List with print beatles[1][0]. There you got the Result Paul.</p>
+		<p><img src="images/S3S4Mutation.png" alt="Mutation in Python"></p>
+		<p>With Mutation you can change a value in a list. In the Example we Change the Value 0 = H with an Y after assignig it to the posiotion 0 in the List. In normal Strings you have to change to complete String with a new one not only one value.</p>
+		<p><img src="images/S3S4Mutation2.png" alt="Refering to Variables"></p>
+		<p>It is possible that two Variables reference to the same list. If you change one (e.g. q) the changes are made on both Variables because both are referencing the same list. This is called Aliasing.</p>
+		<p><img src="images/S3S4Aliasing.png" alt="Aliasing of Variables"></p>
+		<p>All states are the same until you give the Variable a new state.</p>
+		<p><img src="images/S3S4ListOperationsAppend.png" alt="List Operations Append"></p>
+		<p>With the Method append you can add a value to the End of a List. There would not be created a new list, the append method adds the value to the existing list. If you want to add a list with append you it would be added as one element. That means in the result, you have a List in a List as you see in the Example below.</p>
+		<p><img src="images/S3S4ListOperationsAppend2.png" alt="List Operations Append"></p>
+		<p>With Plus Operations you can concatenate two Lists to one list.<br> With the len Function you can count the Values in the List.</p>
+		<p><img	src="images/S3S4ListOperationsPlusandLength.png" alt="List Operations Plus and Length"></p>
+		<p>For Loops</p>
+		<p><img src="images/S3S4ForLoops.png" alt="For Loops in Python"></p>
+		<p>With for Loops you can go through lists and evaluate every element in the List. The for Loops iterates as long as you have Elements in the input list. A List in the List is one Element as in the len Function.</p>
+		<p><img src="images/S3S4IndexInNotIn.png" alt="Methods for Indexing"></p>
+		<p>Investigating adding and appending to lists.</p>
+		<table>
+			<tr>
+			   	<td class="table_tab">+</td>
+			   	<td>When you use the + method, you append one or more values to the List. You can list + [5] and you get a list [1,2,3,4,5]. You can list + [5,6,7,8] and you get a list [1,2,3,4,5,6,7,8]. All these Operations generate a new List (new Object).</td>
+			</tr>
+			<tr>
+				<td class="table_tab">append</td>
+				<td>When you use the append method, you append one single value to the List. When you append more values then one, then you append a List in the List. You can list.append(5) and you get a list [1,2,3,4,5]. You can list.append([5,6,7,8]) and you get a list [1,2,3,4[5,6,7,8]]. But all these Operations will be done in a mutable List. No new Object would be generated.</td>
+			</tr>
+			<tr>
+				<td class="table_tab">+=</td>
+				<td>When you use the += method, you append one or more values to the List. You can list += [5] and you get a list [1,2,3,4,5]. You can list += [5,6,7,8] and you get a list [1,2,3,4,5,6,7,8]. When you do list += [6,7,8] and list += [5] you got a list [1,2,3,4,6,7,8,5]. But all these Operations will be done in a mutable List. No new Object would be generated.</td>
+			</tr>
+		</table>
+		<p><b>Final Code for Stage 2</b></p>
+		<iframe src="http://pastebin.com/embed_iframe.php?i=tGvwhphY" style="border:none;width:100%;height:500px"></iframe>
+		<h3 id="S3S5">Other Notes for this Stage</h3>
+		<p><b>Mutable</b> means that we can change the current object in place. We do not need to assign the variable to a new object in Python. Lists are mutable objects because we can mutate the list and not have to assign our variable a new object to take up memory in our computer.</p>		
+	</div>
+    <div class="footer"></div>
+    </body>
+</html>
